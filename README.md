@@ -1,7 +1,7 @@
 
 # AI-Powered Market Intelligence System
 
-[cite_start]This repository contains the solution for the Applied AI Engineer assignment focused on building an AI-powered market intelligence system. [cite_start]The project ingests, cleans, and analyzes marketing and sales data to generate actionable insights using Large Language Models (LLMs). [cite_start]The final output is an interactive web dashboard built with Streamlit that displays key metrics and AI-generated recommendations.
+This repository contains the solution for the Applied AI Engineer assignment focused on building an AI-powered market intelligence system. The project ingests, cleans, and analyzes marketing and sales data to generate actionable insights using Large Language Models (LLMs). The final output is an interactive web dashboard built with Streamlit that displays key metrics and AI-generated recommendations.
 
 ## Key Features
 
