@@ -57,7 +57,7 @@ with st.sidebar:
 
     # --- NEW: Report Download Section ---
     st.header("📄 Report Download")
-    report_path = 'output/D2C_executive_report.md'
+    report_path = r'output\D2C_executive_report.md'
     if os.path.exists(report_path):
         with open(report_path, "r", encoding="utf-8") as file:
             report_content = file.read()
@@ -83,8 +83,8 @@ st.markdown("An interactive dashboard for D2C performance metrics and AI-generat
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_csv('output/processed_d2c_data.csv')
-        with open('output/d2c_insights.json', 'r') as f:
+        df = pd.read_csv(r'output\processed_d2c_data.csv')
+        with open(r'output\d2c_insights.json', 'r') as f:
             insights = json.load(f)
         return df, insights
     except FileNotFoundError:
@@ -94,7 +94,7 @@ def load_data():
 df, insights_data = load_data()
 
 if df is None or insights_data is None:
-    st.warning("Data files not found in 'output/' folder. Click the 'Update Report' button in the sidebar to generate them.")
+    st.warning("Data files not found in 'output\' folder. Click the 'Update Report' button in the sidebar to generate them.")
 else:
     # --- Section 1: High-Level KPIs ---
     st.header("📈 Overall Performance Metrics", divider='rainbow')
