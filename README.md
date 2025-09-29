@@ -11,7 +11,7 @@ This repository contains the solution for the Applied AI Engineer assignment foc
 * **Interactive Dashboard**: A user-friendly Streamlit application to visualize key performance indicators, explore AI-generated insights, and re-run the analysis pipeline on demand.
 * **Phase 5 Extension**: Fully implements the D2C funnel and SEO analysis, including the generation of AI-powered creative outputs as part of the final report.
 
- **[🔗 Access the Dashboard]([https://kasparro-assignment.streamlit.app/])**
+ **[Access the Dashboard](https://kasparro-assignment.streamlit.app/)**
 
 ## Setup and Installation
 
