@@ -2,3 +2,4 @@ streamlit
 pipeline
 numpy
 pandas
+google-generativeai
