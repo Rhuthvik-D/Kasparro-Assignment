@@ -1,1 +1,4 @@
-papermill
+streamlit
+pipeline
+numpy
+pandas
