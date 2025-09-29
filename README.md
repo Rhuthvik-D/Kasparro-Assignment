@@ -1,100 +1,109 @@
-AI-Powered D2C Market Intelligence Dashboard
-Overview
-This project is an end-to-end AI-powered market intelligence system designed to analyze Direct-to-Consumer (D2C) performance data. It automates the entire workflow from raw data ingestion to generating actionable business insights, executive reports, and creative marketing content using the Google Gemini API.
+```markdown
+# AI-Powered Market Intelligence System
 
-The system is presented through a user-friendly, interactive web dashboard built with Streamlit, allowing non-technical users to explore data and leverage AI-driven recommendations. This project specifically fulfills the "Phase 5 Extension" of the Applied AI Engineer assignment, demonstrating the ability to build and adapt a flexible data pipeline for a new vertical.
+[cite_start]This repository contains the solution for the Applied AI Engineer assignment focused on building an AI-powered market intelligence system. [cite_start]The project ingests, cleans, and analyzes marketing and sales data to generate actionable insights using Large Language Models (LLMs). [cite_start]The final output is an interactive web dashboard built with Streamlit that displays key metrics and AI-generated recommendations.
 
-🚀 Live Demo
-[Placeholder for your deployed Streamlit Community Cloud URL]
+## Key Features
 
-✨ Key Features
-Automated Data Pipeline: A robust Python script (pipeline.py) that handles data loading, cleaning, feature engineering (ROAS, CAC, CTR), and processing in a single, executable run.
+* [cite_start]**Automated Data Pipelines**: Scripts for cleaning and feature engineering on both the Google Play Store dataset and a synthetic D2C dataset[cite: 7, 20, 32, 33].
+* [cite_start]**LLM Integration**: Utilizes the Gemini API to analyze processed data and generate a detailed executive summary with actionable recommendations[cite: 8, 43].
+* [cite_start]**Structured & Actionable Outputs**: Generates cleaned datasets (CSV), structured insights with confidence scores (JSON), and automated reports (Markdown)[cite: 9, 48, 49, 50].
+* [cite_start]**Interactive Dashboard**: A user-friendly Streamlit application to visualize key performance indicators, explore AI-generated insights, and re-run the analysis pipeline on demand[cite: 44, 51].
+* [cite_start]**Phase 5 Extension**: Fully implements the D2C funnel and SEO analysis, including the generation of AI-powered creative outputs as part of the final report[cite: 36, 37, 38, 39, 52].
 
-AI-Powered Insight Generation: Leverages the Google Gemini API to analyze the processed data and generate high-level insights on marketing funnel performance and SEO opportunities.
+## Project Structure
 
-Confidence Scoring: Each AI-generated insight is accompanied by a confidence score, calculated based on the statistical significance of the underlying data (e.g., ad spend, search volume), making the recommendations more trustworthy.
+```
 
-Automated Report Generation: Automatically creates a professional, human-readable executive_report.md file summarizing the key findings and recommendations.
-
-AI Creative Content Generation: Uses data-driven insights to prompt the Gemini API for creative marketing copy, including catchy ad headlines and compelling SEO meta descriptions.
-
-Interactive Dashboard: A clean, modern, and user-friendly web interface built with Streamlit that allows users to:
-
-View high-level KPIs at a glance.
-
-Explore AI-generated insights and their justifications.
-
-Trigger the entire data pipeline to refresh the report on-demand.
-
-Download the executive summary.
-
-Perform a "deep dive" by filtering performance data for specific marketing channels.
-
-🛠️ Technology Stack
-Backend & Data Processing: Python, Pandas, NumPy
-
-Web Framework: Streamlit
-
-Generative AI: Google Gemini API (google-generativeai)
-
-Configuration: TOML
-
-Deployment: Streamlit Community Cloud
-
-⚙️ Setup and Installation
-To run this project locally, please follow these steps:
-
-1. Clone the Repository
-git clone [https://github.com/your-username/your-repository-name.git](https://github.com/your-username/your-repository-name.git)
-cd your-repository-name
-
-2. Create a Virtual Environment (Recommended)
-# For Windows
-python -m venv venv
-venv\Scripts\activate
-
-# For macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
-
-3. Install Dependencies
-Install all required Python packages from the requirements.txt file.
-
-pip install -r requirements.txt
-
-4. Configure Your API Key
-The application uses a .streamlit/secrets.toml file to securely manage the Gemini API key for local development.
-
-Create a folder named .streamlit in the root of the project directory.
-
-Inside this folder, create a file named secrets.toml.
-
-Add your Gemini API key to this file as shown below:
-
-# .streamlit/secrets.toml
-GEMINI_API_KEY = "your_actual_gemini_api_key_here"
-
-▶️ How to Run
-Once the setup is complete, you can launch the Streamlit application from your terminal.
-
-Make sure you are in the root directory of the project.
-
-Run the following command:
-
-streamlit run app.py
-
-Your web browser will automatically open with the dashboard. From there, you can click the "Update Report from Source Data" button in the sidebar to run the full data pipeline and generate your first report.
-
-📁 File Structure
-├── .streamlit/
-│   └── secrets.toml        
+.
 ├── Data/
-│   └── Kasparro_Phase5_D2C_Synthetic_Dataset.csv 
-├── output/                 
-│   ├── processed_d2c_data.csv
-│   ├── d2c_insights.json
-│   └── D2C_executive_report.md
-├── app.py                  # The main Streamlit dashboard application
-├── D2C.py                  # Core script for data processing and AI analysis
-├── requirements.txt        # Python dependencies for the project
-└── README.md               
+│   ├── googleplaystore.csv                       \# Raw Kaggle dataset
+│   └── Kasparro\_Phase5\_D2C\_Synthetic\_Dataset.csv   \# Raw D2C synthetic dataset
+├── output/
+│   ├── cleaned\_google\_play.csv                   \# Cleaned Google Play data
+│   ├── processed\_d2c\_data.csv                    \# Processed D2C data with engineered features
+│   ├── d2c\_insights.json                         \# Structured insights generated by the D2C pipeline
+│   └── D2C\_executive\_report.md                   \# AI-generated executive report
+├── .streamlit/
+│   └── secrets.toml                              \# Streamlit secrets file for API key
+├── app.py                                        \# Main Streamlit application file
+├── D2C.py                                        \# Module for D2C data processing and insight generation
+├── Google\_play\_data\_clean.ipynb                  \# Jupyter Notebook for cleaning the Google Play dataset
+├── requirements.txt                              \# Python dependencies
+└── README.md                                     \# This README file
+
+````
+
+## Setup and Installation
+
+1.  **Clone the Repository**
+    ```bash
+    git clone <your-repository-url>
+    cd <your-repository-name>
+    ```
+
+2.  **Create a Virtual Environment**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    ```
+
+3.  **Install Dependencies**
+    Create a `requirements.txt` file with the following content and run the installation command.
+    ```
+    # requirements.txt
+    streamlit
+    pandas
+    numpy
+    google-generativeai
+    ```
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Set Up Data Files**
+    * Create a `Data/` directory in the root of the project.
+    * Place `googleplaystore.csv` and `Kasparro_Phase5_D2C_Synthetic_Dataset.csv` inside this directory.
+
+5.  **Configure API Key**
+    * Create a `.streamlit/` directory in the root of the project.
+    * Inside it, create a file named `secrets.toml` and add your Gemini API key:
+    ```toml
+    # .streamlit/secrets.toml
+    GEMINI_API_KEY="YOUR_API_KEY_HERE"
+    ```
+
+## How to Run
+
+1.  **Clean the Google Play Dataset (Optional)**
+    To generate the `cleaned_google_play.csv` file, run the cells in the `Google_play_data_clean.ipynb` notebook.
+
+2.  **Launch the Streamlit Dashboard**
+    Run the following command in your terminal from the project's root directory:
+    ```bash
+    streamlit run app.py
+    ```
+
+3.  **Generate a New Report**
+    Once the application is running, navigate to the sidebar and click the **"Update Report from Source Data"** button. This will trigger the full D2C pipeline in `D2C.py`, which:
+    * Reads and cleans the D2C dataset.
+    * [cite_start]Engineers features like ROAS (Return on Ad Spend) and CAC (Customer Acquisition Cost)[cite: 37].
+    * Generates strategic insights.
+    * [cite_start]Calls the Gemini API to write a new executive report[cite: 43].
+    * Saves all artifacts to the `output/` directory and refreshes the dashboard.
+
+## Code Modules Overview
+
+* `app.py`: This script contains the Streamlit application. It serves as the main user interface, displaying KPIs, AI-generated insights, and providing controls to run the data pipeline.
+* [cite_start]`D2C.py`: The core logic for the D2C analysis (Phase 5)[cite: 46]. It includes the `D2CDataPipeline` class for data cleaning and feature engineering, and the `InsightGenerator` class, which analyzes the data and uses the Gemini model to produce insights and a markdown report.
+* [cite_start]`Google_play_data_clean.ipynb`: A Jupyter Notebook dedicated to the initial cleaning of the Google Play Store dataset[cite: 20]. It handles missing values, converts data types, and removes duplicates to prepare the data for analysis.
+
+## Assignment Deliverables Checklist
+
+-   [cite_start][x] **Clean combined dataset (CSV/JSON)**[cite: 48]: Fulfilled by `output/cleaned_google_play.csv` and `output/processed_d2c_data.csv`.
+-   [cite_start][x] **Insights JSON file**[cite: 49]: Fulfilled by `output/d2c_insights.json`.
+-   [cite_start][x] **Executive report (Markdown/PDF/HTML)**[cite: 50]: Fulfilled by `output/D2C_executive_report.md`.
+-   [cite_start][x] **CLI/Streamlit interface to query insights**[cite: 51]: Fulfilled by `app.py`.
+-   [cite_start][x] **Phase 5 Extension: Funnel + SEO insights + creative outputs**[cite: 52]: Fulfilled by the D2C pipeline (`D2C.py`) and the final report it generates.
+
+````
