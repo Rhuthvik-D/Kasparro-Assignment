@@ -1,0 +1,37 @@
+{
+    "report_generated_utc": "2025-09-29T01:34:28.292600+00:00",
+    "total_insights": 2,
+    "insights": [
+        {
+            "insight_id": "FUN-001",
+            "type": "Funnel Performance",
+            "title": "Top Channel by ROAS",
+            "description": "The 'Instagram Influencer' channel demonstrates the highest return on ad spend.",
+            "data": {
+                "channel": "Instagram Influencer",
+                "average_roas": 10.32
+            },
+            "recommendation": "Consider increasing budget allocation to the 'Instagram Influencer' channel.",
+            "confidence": {
+                "score": 0.48,
+                "justification": "Based on a total spend of $12,494.05."
+            }
+        },
+        {
+            "insight_id": "SEO-001",
+            "type": "SEO Opportunity",
+            "title": "High-Volume, Poorly Ranked Category",
+            "description": "The 'Home Decor' category has significant search volume but a poor ranking.",
+            "data": {
+                "category": "Home Decor",
+                "search_volume": 47732,
+                "average_position": 40.4
+            },
+            "recommendation": "Prioritize SEO efforts for the 'Home Decor' category page.",
+            "confidence": {
+                "score": 1.0,
+                "justification": "Based on a high search volume of 47,732 per month."
+            }
+        }
+    ]
+}
