@@ -166,8 +166,8 @@ def run_full_d2c_pipeline(api_key: str):
     """
     # --- Step 1: Run Data Cleaning and Feature Engineering ---
     print("--- Running Data Cleaning and Feature Engineering ---")
-    data_pipeline = D2CDataPipeline(file_path=r'Data\Kasparro_Phase5_D2C_Synthetic_Dataset.csv')
-    processed_df = data_pipeline.run(output_filepath=r'output\processed_d2c_data.csv')
+    data_pipeline = D2CDataPipeline(file_path='Data/Kasparro_Phase5_D2C_Synthetic_Dataset.csv')
+    processed_df = data_pipeline.run(output_filepath='output/processed_d2c_data.csv')
 
     # --- Step 2: Initialize LLM ---
     print("\n--- Initializing Gemini API ---")
@@ -179,8 +179,8 @@ def run_full_d2c_pipeline(api_key: str):
     # --- Step 3: Generate Insights and Markdown Report ---
     insight_gen = InsightGenerator(processed_df=processed_df, llm_model=gemini_model)
     insight_gen.analyze()
-    insight_gen.save_insights_to_json(output_filepath=r'output\d2c_insights.json')
-    insight_gen.generate_and_save_markdown_report(output_filepath=r'output\D2C_executive_report.md')
+    insight_gen.save_insights_to_json(output_filepath='output/d2c_insights.json')
+    insight_gen.generate_and_save_markdown_report(output_filepath='output/D2C_executive_report.md')
 
     # --- Step 4: Execute Creative Content Generation ---
     creative_gen = CreativeGenerator(processed_df=processed_df, llm_model=gemini_model)
